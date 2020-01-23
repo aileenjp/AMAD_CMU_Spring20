@@ -39,10 +39,10 @@ public class BulbAdapter extends RecyclerView.Adapter<BulbAdapter.ViewHolder> {
             bulbTextView.setOnClickListener(this);
         }
 
+
         @Override
         public void onClick(View v) {
             mItemClickListener.onItemClick(getAdapterPosition());
-
         }
     }
 
