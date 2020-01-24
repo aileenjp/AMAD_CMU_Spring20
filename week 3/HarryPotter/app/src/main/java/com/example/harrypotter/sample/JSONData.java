@@ -1,22 +1,15 @@
-package com.example.tulips.sample;
+package com.example.harrypotter.sample;
 
 import android.content.Context;
-import android.util.Log;
 
-import com.example.tulips.R;
-import com.example.tulips.model.Character;
+import com.example.harrypotter.R;
+import com.example.harrypotter.model.Character;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

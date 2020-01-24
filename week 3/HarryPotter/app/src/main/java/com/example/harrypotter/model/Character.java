@@ -1,4 +1,4 @@
-package com.example.tulips.model;
+package com.example.harrypotter.model;
 
 public class Character {
     private String name;

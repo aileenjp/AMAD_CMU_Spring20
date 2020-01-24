@@ -1,18 +1,15 @@
-package com.example.tulips;
+package com.example.harrypotter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.tulips.model.Character;
-import com.example.tulips.sample.JSONData;
+import com.example.harrypotter.model.Character;
+import com.example.harrypotter.sample.JSONData;
 
 public class DetailActivity extends AppCompatActivity {
 

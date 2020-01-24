@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tulips">
+    package="com.example.harrypotter">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/spring">
-        <activity android:name=".DetailActivity"
-            android:parentActivityName=".MainActivity">
+        <activity android:name="com.example.harrypotter.DetailActivity"
+            android:parentActivityName="com.example.harrypotter.MainActivity">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.harrypotter.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

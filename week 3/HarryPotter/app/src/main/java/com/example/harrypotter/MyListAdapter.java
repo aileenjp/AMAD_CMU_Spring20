@@ -1,4 +1,4 @@
-package com.example.tulips;
+package com.example.harrypotter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tulips.model.Character;
+import com.example.harrypotter.model.Character;
 
 import java.util.List;
 

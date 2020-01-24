@@ -1,4 +1,4 @@
-package com.example.tulips;
+package com.example.harrypotter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -6,12 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.example.tulips.model.Character;
-import com.example.tulips.sample.JSONData;
+import com.example.harrypotter.model.Character;
+import com.example.harrypotter.sample.JSONData;
 
 import java.util.List;
 

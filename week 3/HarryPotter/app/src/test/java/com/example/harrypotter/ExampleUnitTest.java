@@ -1,4 +1,4 @@
-package com.example.tulips;
+package com.example.harrypotter;
 
 import org.junit.Test;
 
