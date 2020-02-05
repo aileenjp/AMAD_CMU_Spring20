@@ -66,7 +66,6 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
                         mItemList.remove(position);
                         //update view model
                         mItemViewModel.getItemList().setValue(mItemList);
-                        notifyItemRemoved(position);
                         Snackbar.make(v, "Item removed", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                         return false;
