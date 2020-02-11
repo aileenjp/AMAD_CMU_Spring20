@@ -43,14 +43,6 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         final Item item = mItemList.get(position);
         holder.mTextView.setText(item.getName());
 
-        //long click listener
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener(){
-            @Override
-            public boolean onLongClick(View v) {
-                return false;
-            }
-        });
-
         //context menu
         holder.itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener(){
             @Override

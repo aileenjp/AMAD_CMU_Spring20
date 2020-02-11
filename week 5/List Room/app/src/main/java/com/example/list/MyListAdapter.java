@@ -54,8 +54,8 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         int position = holder.getAdapterPosition();
-                        mItemList.remove(position);
-                        mItemViewModel.getItemList().setValue(mItemList);
+                        Item removeItem = mItemList.remove(position);
+                        mItemViewModel.deleteItem(removeItem);
                         Snackbar.make(v, "Item removed", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                         return false;
@@ -72,6 +72,10 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             return mItemList.size();
         }
         else return 0;
+    }
+
+    public void setItems(List<Item> items){
+        mItemList = items;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
