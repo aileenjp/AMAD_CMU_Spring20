@@ -5,14 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import com.example.movies.loader.OnDataReadyCallback;
 import com.example.movies.model.Movie;
 import com.example.movies.loader.JSONData;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements OnDataReadyCallback {
     List<Movie> topMovieList =JSONData.movieList;
+    private MyListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,20 +24,25 @@ public class MainActivity extends AppCompatActivity{
 
         //get data
         if (topMovieList.isEmpty()) {
-            //topMovieList = JSONData.getJSON();
-            JSONData.getJSON(this);
+            JSONData.getJSON(this, this);
         }
 
         //get the recycler view
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         //define an adapter
-        MyListAdapter adapter = new MyListAdapter(topMovieList, this);
+        adapter = new MyListAdapter(topMovieList, this);
 
         //assign the adapter to the recycler view
         recyclerView.setAdapter(adapter);
 
         //set a layout manager on the recycler view
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Log.d("data", String.valueOf(topMovieList.size()));
+    }
+
+    @Override
+    public void onDataReady(List<Movie> movieList) {
+        adapter.setMovieList(movieList);
     }
 }

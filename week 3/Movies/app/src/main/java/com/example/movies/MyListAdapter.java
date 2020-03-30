@@ -1,6 +1,7 @@
 package com.example.movies;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,6 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         TextView mTextView;
         TextView mTextView2;
         ImageView mImageView;
-
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,5 +61,10 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return mMovieList.size();
+    }
+
+    public void setMovieList(List<Movie> movieList){
+        this.mMovieList = movieList;
+        notifyDataSetChanged();
     }
 }

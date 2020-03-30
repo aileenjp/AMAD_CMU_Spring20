@@ -27,7 +27,7 @@ public class JSONData {
         movieList = new ArrayList<>();
     }
 
-    public static void getJSON(Context context){
+    public static void getJSON(Context context, final OnDataReadyCallback callback){
         String url = API_URL + API_KEY;
 
         // create Volley request queue
@@ -37,7 +37,8 @@ public class JSONData {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        parseJSON(response);
+                        movieList = parseJSON(response);
+                        callback.onDataReady(movieList);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -60,27 +61,29 @@ public class JSONData {
                 //create JSONArray with the value from the characters key
                 JSONArray resultsArray = jsonObject.getJSONArray("results");
 
+                List<Movie> movieData = new ArrayList();
                 //loop through each object in the array
                 for (int i =0; i < resultsArray.length(); i++) {
-                    JSONObject charObject = resultsArray.getJSONObject(i);
+                    JSONObject movieObject = resultsArray.getJSONObject(i);
 
                     //get values
-                    int id = charObject.getInt("id");
-                    String title = charObject.getString("title");
+                    int id = movieObject.getInt("id");
+                    String title = movieObject.getString("title");
                     //save the fully qualified URL for the poster image
-                    String posterURL = POSTER_BASE_URL + charObject.getString("poster_path");
-                    String rating = String.valueOf(charObject.getDouble("vote_average"));
+                    String posterURL = POSTER_BASE_URL + movieObject.getString("poster_path");
+                    String rating = String.valueOf(movieObject.getDouble("vote_average"));
 
                     //create new Movie object
                     Movie movie = new Movie(id, title, posterURL, rating);
 
                     //add movie object to our ArrayList
-                    movieList.add(movie);
+                    movieData.add(movie);
                 }
+                return movieData;
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-        return movieList;
+        return null;
     }
 }
